@@ -164,11 +164,13 @@
     [self.view addSubview:self.pageViewController.view];
     
     self.toolbar = [UIToolbar.alloc initWithFrame:CGRectMake(0, self.view.frame.size.height-44, self.view.frame.size.width, 44)];
-    if(self.currentOrientation == UIInterfaceOrientationLandscapeLeft || self.currentOrientation == UIInterfaceOrientationLandscapeRight){
+    [self.view addSubview:self.toolbar];
+    //wrong toolbar size in initial landscape mode
+    /*if(self.currentOrientation == UIInterfaceOrientationLandscapeLeft || self.currentOrientation == UIInterfaceOrientationLandscapeRight){
         if (self.view.bounds.size.height > self.view.bounds.size.width) {
             self.toolbar.frame = CGRectMake(0, self.view.frame.size.width-44, self.view.frame.size.height, 44);
         }
-    }
+    }*/
     
     self.toolbar.tintColor = self.UICustomization.barButtonsTintColor;
     self.toolbar.tag = 307;

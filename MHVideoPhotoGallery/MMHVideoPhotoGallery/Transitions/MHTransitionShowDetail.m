@@ -172,7 +172,7 @@
     self.descriptionViewBackgroundToolbar.frame = CGRectMake(0, toViewController.view.frame.size.height-110, toViewController.view.frame.size.width, 110);
     
     self.backView = [UIView.alloc initWithFrame:toViewController.view.bounds];
-    self.backView.backgroundColor = UIColor.whiteColor;
+    self.backView.backgroundColor = toViewController.view.backgroundColor;
     self.backView.alpha =0;
     
     [containerView addSubview:toViewController.view];
