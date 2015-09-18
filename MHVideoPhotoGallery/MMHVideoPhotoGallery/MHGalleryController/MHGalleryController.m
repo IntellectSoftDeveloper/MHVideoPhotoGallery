@@ -25,7 +25,9 @@
     
     self.overViewViewController= MHOverviewController.new;
     self.imageViewerViewController = MHGalleryImageViewerViewController.new;
-    
+    if ( [self.navigationBar respondsToSelector:@selector(setSemanticContentAttribute:)] ) {
+        self.navigationBar.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
+    }
     if (presentationStyle != MHGalleryViewModeOverView) {
         self.viewControllers = @[self.overViewViewController,self.imageViewerViewController];
     }else{

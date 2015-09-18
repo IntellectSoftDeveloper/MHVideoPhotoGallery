@@ -164,6 +164,12 @@
     [self.view addSubview:self.pageViewController.view];
     
     self.toolbar = [UIToolbar.alloc initWithFrame:CGRectMake(0, self.view.frame.size.height-44, self.view.frame.size.width, 44)];
+    if ( [self.toolbar respondsToSelector:@selector(setSemanticContentAttribute:)] ) {
+        self.toolbar.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
+    }
+    if ( [self.pageViewController.view respondsToSelector:@selector(setSemanticContentAttribute:)] ) {
+        self.pageViewController.view.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
+    }
     [self.view addSubview:self.toolbar];
     //wrong toolbar size in initial landscape mode
     /*if(self.currentOrientation == UIInterfaceOrientationLandscapeLeft || self.currentOrientation == UIInterfaceOrientationLandscapeRight){
@@ -1389,7 +1395,8 @@
                 }
             }
         }
-        self.act.color = [UIColor blackColor];
+        //self.act.color = [UIColor blackColor];
+        self.act.color = [UIColor whiteColor];
     }
     if (self.item.galleryType == MHGalleryTypeVideo) {
         
